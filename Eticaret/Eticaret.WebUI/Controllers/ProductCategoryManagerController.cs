@@ -1,4 +1,5 @@
-﻿using Eticaret.Core.Models;
+﻿using Eticaret.Core.Contracts;
+using Eticaret.Core.Models;
 using Eticaret.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace Eticaret.WebUI.Controllers
 {
     public class ProductCategoryManagerController : Controller
     {
-        ProductCategoryRepository context;
+        IRepository<ProductCategory> context;
 
-        public ProductCategoryManagerController()
+        public ProductCategoryManagerController(IRepository<ProductCategory> context)
         {
-            context = new ProductCategoryRepository();
+            this.context = context;
         }
         // GET: ProductManager
         public ActionResult Index()

@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Eticaret.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string Id { get; set; }
 
         [DisplayName("Ürün Adı")]
         public string Name { get; set; }
@@ -23,9 +22,5 @@ namespace Eticaret.Core.Models
         [DisplayName("Resim")]
         public string Image { get; set; }
 
-        public Product()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

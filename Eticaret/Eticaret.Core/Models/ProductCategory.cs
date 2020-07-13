@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 
 namespace Eticaret.Core.Models
 {
-    public class ProductCategory
+    public class ProductCategory : BaseEntity
     {
-        public string Id { get; set; }
         [DisplayName("Kategori")]
         public string Category { get; set; }
 
-        public ProductCategory()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }
