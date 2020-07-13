@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Eticaret.WebUI.Models
@@ -55,10 +56,10 @@ namespace Eticaret.WebUI.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Şifre")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Beni Hatırla?")]
         public bool RememberMe { get; set; }
     }
 
@@ -70,15 +71,33 @@ namespace Eticaret.WebUI.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} Şifreler en az {2} uzunluğunda olmalıdır.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Şifre")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Şifre Tekrarı")]
+        [Compare("Password", ErrorMessage = "Şifreler Uyuşmuyor.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DisplayName("Ad")]
+        public string FirstName { get; set; }
+        [DisplayName("Soyad")]
+        [Required]
+        public string LastName { get; set; }
+        [DisplayName("Sokak")]
+        [Required]
+        public string Street { get; set; }
+        [DisplayName("Şehir")]
+        [Required]
+        public string City { get; set; }
+        [DisplayName("Mahalle")]
+        public string State { get; set; }
+        [DisplayName("Zip Kodu")]
+        [Required]
+        public string ZipCode { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -89,14 +108,14 @@ namespace Eticaret.WebUI.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} Şifreler en az {2} uzunluğunda olmalıdır.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Şifreler Uyuşmuyor.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
