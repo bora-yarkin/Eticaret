@@ -45,7 +45,7 @@ namespace Eticaret.DataAccess.InMemory
             }
             else
             {
-                throw new Exception(className + " Not found");
+                throw new Exception(className + " Bulunamadı");
             }
         }
 
@@ -58,7 +58,7 @@ namespace Eticaret.DataAccess.InMemory
             }
             else
             {
-                throw new Exception(className + " Not found");
+                throw new Exception(className + " Bulunamadı");
             }
         }
 
@@ -77,7 +77,7 @@ namespace Eticaret.DataAccess.InMemory
             }
             else
             {
-                throw new Exception(className + " Not found");
+                throw new Exception(className + " Bulunamadı");
             }
         }
     }

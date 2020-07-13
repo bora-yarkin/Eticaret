@@ -15,7 +15,7 @@ namespace Eticaret.Services
         IRepository<Product> productContext;
         IRepository<Basket> basketContext;
 
-        public const string BasketSessionName = "eCommerceBasket";
+        public const string BasketSessionName = "EticaretCookie";
 
         public BasketService(IRepository<Product> ProductContext, IRepository<Basket> BasketContext)
         {

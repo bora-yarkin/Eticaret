@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Controllers
 {
+    [Authorize (Users = "admin@admin.com")]
     public class AdminController : Controller
     {
         // GET: Admin
