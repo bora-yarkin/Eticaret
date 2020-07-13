@@ -49,6 +49,7 @@
     <tr>
         <td colspan="4" style="text-align:right"><strong>Sepet Toplamı</strong></td>
         <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quanity).Sum())</td>
+        <td><a href="@Url.Action("Checkout", "Basket")">Siparişi Onayla</a></td>
     </tr>
 
 </table>
