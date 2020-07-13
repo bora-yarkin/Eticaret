@@ -2,6 +2,7 @@ using Eticaret.Core.Contracts;
 using Eticaret.Core.Models;
 using Eticaret.DataAccess.InMemory;
 using Eticaret.DataAccess.SQL;
+using Eticaret.Services;
 using System;
 
 using Unity;
@@ -48,6 +49,9 @@ namespace Eticaret.WebUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
+            container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
+            container.RegisterType<IBasketService, BasketService>();
         }
     }
 }

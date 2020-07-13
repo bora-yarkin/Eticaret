@@ -132,7 +132,7 @@ namespace Eticaret.Services
             }
         }
 
-        public BasketSummaryViewModel GetBacketSummary(HttpContextBase httpContext)
+        public BasketSummaryViewModel GetBasketSummary(HttpContextBase httpContext)
         {
             Basket basket = GetBasket(httpContext, false);
             BasketSummaryViewModel model = new BasketSummaryViewModel(0, 0);
