@@ -30,11 +30,11 @@ namespace Eticaret.WebUI.Models
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "Code")]
+        [Display(Name = "Kod")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(Name = "Bu tarayıcıyı hatırla")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -110,12 +110,12 @@ namespace Eticaret.WebUI.Models
         [Required]
         [StringLength(100, ErrorMessage = "{0} Şifreler en az {2} uzunluğunda olmalıdır.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Şifre")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "Şifreler Uyuşmuyor.")]
+        [Display(Name = "Şifreyi Doğrula")]
+        [Compare("Şifre", ErrorMessage = "Şifreler Uyuşmuyor.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
