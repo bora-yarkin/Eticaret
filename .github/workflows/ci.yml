@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Bora Yarkın
+# SPDX-License-Identifier: GPL-3.0-only
+
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: Eticaret/global.json
+
+      - name: Restore
+        run: dotnet restore Eticaret/Eticaret.sln
+
+      - name: Build
+        run: dotnet build Eticaret/Eticaret.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test Eticaret/Eticaret.WebUI.Tests/Eticaret.WebUI.Tests.csproj --configuration Release --no-build

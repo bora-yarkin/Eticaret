@@ -1,0 +1,29 @@
+<!--
+SPDX-FileCopyrightText: 2026 Bora Yarkın
+SPDX-License-Identifier: GPL-3.0-only
+-->
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\\Eticaret.Core\\Eticaret.Core.csproj" />
+    <ProjectReference Include="..\\Eticaret.DataAccess.InMemory\\Eticaret.DataAccess.InMemory.csproj" />
+    <ProjectReference Include="..\\Eticaret.DataAccess.SQL\\Eticaret.DataAccess.SQL.csproj" />
+    <ProjectReference Include="..\\Eticaret.Services\\Eticaret.Services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.2" />
+  </ItemGroup>
+</Project>

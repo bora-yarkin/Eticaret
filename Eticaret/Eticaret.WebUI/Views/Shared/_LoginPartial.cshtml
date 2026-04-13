@@ -1,0 +1,31 @@
+@*
+SPDX-FileCopyrightText: 2026 Bora Yarkın
+SPDX-License-Identifier: GPL-3.0-only
+*@
+
+@using Eticaret.Core.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a asp-controller="Manage" asp-action="Index" title="Hesap Ayarları">@UserManager.GetUserName(User)</a>
+        </li>
+        <li>
+            <form asp-controller="Account" asp-action="LogOff" method="post" class="navbar-form navbar-right">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Çıkış Yap</button>
+            </form>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-controller="Account" asp-action="Register" id="registerLink">Kayıt Ol</a></li>
+        <li><a asp-controller="Account" asp-action="Login" id="loginLink">Giriş Yap</a></li>
+    </ul>
+}

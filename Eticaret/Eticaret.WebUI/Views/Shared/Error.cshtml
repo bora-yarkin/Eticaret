@@ -1,0 +1,20 @@
+@*
+SPDX-FileCopyrightText: 2026 Bora Yarkın
+SPDX-License-Identifier: GPL-3.0-only
+*@
+
+@model Eticaret.WebUI.Models.ErrorViewModel
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h1 class="text-danger">Hata.</h1>
+<h2 class="text-danger">İsteğiniz işlenirken bir hata oluştu.</h2>
+
+@if (Model?.ShowRequestId == true)
+{
+    <p>
+        <strong>İstek Kimliği:</strong> <code>@Model.RequestId</code>
+    </p>
+}

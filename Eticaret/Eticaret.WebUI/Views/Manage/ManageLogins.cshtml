@@ -1,0 +1,58 @@
+@*
+SPDX-FileCopyrightText: 2026 Bora Yarkın
+SPDX-License-Identifier: GPL-3.0-only
+*@
+
+@model Eticaret.WebUI.Models.ManageLoginsViewModel
+@{
+    ViewBag.Title = "Diğer cihazlardaki girişleri düzenle";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+@if (Model.CurrentLogins != null && Model.CurrentLogins.Count > 0)
+{
+    <h4>Registered Logins</h4>
+    <table class="table">
+        <tbody>
+            @foreach (var account in Model.CurrentLogins)
+            {
+                <tr>
+                    <td>@account.LoginProvider</td>
+                    <td>
+                        @if (ViewBag.ShowRemoveButton)
+                        {
+                            <form asp-controller="Manage" asp-action="RemoveLogin" method="post" class="form-inline">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="loginProvider" value="@account.LoginProvider" />
+                                <input type="hidden" name="providerKey" value="@account.ProviderKey" />
+                                <input type="submit" class="btn btn-default" value="Çıkar" title="@account.LoginProvider Hesabından sil." />
+                            </form>
+                        }
+                        else
+                        {
+                            @: &nbsp;
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.OtherLogins != null && Model.OtherLogins.Count > 0)
+{
+    <form asp-controller="Manage" asp-action="LinkLogin" method="post">
+        @Html.AntiForgeryToken()
+        <div id="socialLoginList">
+            <p>
+                @foreach (var p in Model.OtherLogins)
+                {
+                    <button type="submit" class="btn btn-default" id="@p.Name" name="provider" value="@p.Name" title="@p.DisplayName Kullanarak hesabına giriş yap">@p.DisplayName</button>
+                }
+            </p>
+        </div>
+    </form>
+}

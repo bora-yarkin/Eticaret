@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Bora Yarkın
+# SPDX-License-Identifier: GPL-3.0-only
+
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/bora-yarkin/Eticaret/security/policy
+    about: Please follow the security policy and use private reporting when available.

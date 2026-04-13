@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2026 Bora Yarkın
+# SPDX-License-Identifier: GPL-3.0-only
+
+name: Bug report
+description: Report a reproducible bug in Eticaret.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+      placeholder: Checkout redirects to the login page after submitting a valid basket.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide a clear, minimal reproduction.
+      placeholder: |
+        1. Sign in as ...
+        2. Add a product to the basket
+        3. Click Checkout
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, browser, .NET SDK version, and database details if relevant.
+      placeholder: macOS 15, Chrome 135, .NET SDK 10.0.102, SQL Server 2022
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant logs, stack traces, or screenshots.
+      render: shell
