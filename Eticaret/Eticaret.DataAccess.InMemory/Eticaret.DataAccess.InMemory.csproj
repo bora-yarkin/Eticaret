@@ -13,6 +13,6 @@ SPDX-License-Identifier: GPL-3.0-only
     <ProjectReference Include="..\\Eticaret.Core\\Eticaret.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Runtime.Caching" Version="8.0.0" />
+    <PackageReference Include="System.Runtime.Caching" Version="10.0.5" />
   </ItemGroup>
 </Project>
